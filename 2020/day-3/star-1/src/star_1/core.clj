@@ -14,9 +14,14 @@
       (conj positions {:position new-position
                        :symbol (nth row new-position)}))))
 
-(defn -main[input]
+(defn tree-count [input row-speed column-speed]
   (->> input
-       (reduce #(next-position %1 3 %2) [])
+       (take-nth column-speed)
+       (reduce #(next-position %1 row-speed %2) [])
        (filter #(= \# (:symbol %)))
-       (count)
-       (println)))
+       (count)))
+
+(defn -main[input]
+  (-> input
+      (tree-count 3 1)
+      (println)))

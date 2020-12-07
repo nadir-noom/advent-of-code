@@ -12,3 +12,11 @@
            (next-position [{:position 4}] 3 "#...##")))
     (is (= [{:position 1} {:position 4} {:position 1 :symbol \.}]
            (next-position [{:position 1} {:position 4}] 3 "#...##")))))
+
+(deftest test-tree-count
+  (testing "Should return the number of trees encountered on a given vector"
+    (let [input [".##..##."
+                 "..##..##"
+                 ".#.###.#"]]
+      (is (= 2 (tree-count input 2 1)))
+      (is (= 1 (tree-count input 3 2))))))
