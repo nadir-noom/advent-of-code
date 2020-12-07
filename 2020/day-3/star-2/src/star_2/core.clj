@@ -22,8 +22,5 @@
        (count)))
 
 (defn -main[input]
-  (println (* (tree-count input 1 1)
-              (tree-count input 3 1)
-              (tree-count input 5 1)
-              (tree-count input 7 1)
-              (tree-count input 1 2))))
+  (println (apply * (map #(apply tree-count input %)
+                         [[1 1] [3 1] [5 1] [7 1] [1 2]]))))
