@@ -8,5 +8,4 @@
     (is (= 0 (sonar-sweep [])))
     (is (= 0 (sonar-sweep [2])))
     (is (= 3 (sonar-sweep [2 3 4 5])))
-    (is (= 2 (sonar-sweep [2 1 4 5])))
     (is (= 2 (sonar-sweep [2 1 4 5])))))
