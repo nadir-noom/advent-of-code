@@ -4,28 +4,6 @@
             [clojure.core.matrix :as matrix])
   (:gen-class))
 
-
-
-
-;; [3 1] [1 3]
-
-;; 3 -> 1
-;; x (reverse (range 1 3))
-;; y (range 1 3)
-
-;; [1 3] [3 1]
-;; x (range 1 3)
-;; y (reverse (range 1 3))
-
-;; [1 1] [3 3]
-;; x (range 1 3)
-;; y (range 1 3)
-
-;; [3 3] [1 1]
-;; x (reverse (range 1 3))
-;; y (reverse (range 1 3))
-
-
 (defn plot [{start :start end :end :as coordinate}]
   (let [x-coords (if (< (first start) (first end))
                    (range (first start) (inc (first end)))
