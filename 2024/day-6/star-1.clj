@@ -7,7 +7,7 @@
          m m]
     (if (zero? repeated)
       (mapv vec m)
-      (recur (dec repeated) (mapv reverse (apply mapv vector m))))))
+      (recur (dec repeated) (mapv rseq (apply mapv vector m))))))
 
 (defn find-guard[input]
   (first (for [y (range (count input))
