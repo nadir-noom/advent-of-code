@@ -2,3 +2,4 @@
 
 (require '[clojure.string :as str])
 
+(println "Test")
